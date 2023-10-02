@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* *{margin: 0; padding: 0; box-sizing: border-box;} */
+       
+          .accordian{ background-color: #eee; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; outline: none;text-align: left; font-size: 18px; transition: 0.5s;}
+
+          .active, .accordian:hover 
+          {
+            background-color: #ccc;
+          }
+
+          .accordian:after 
+          {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+          }
+          .active:after 
+          {
+            content: "\2212";
+          }
+
+          .panel
+          {
+            /* padding:0 18px; */
+            max-height: 0px;
+            overflow: hidden;
+            font-size: 15px;
+            color: #333;
+            letter-spacing: 1px;
+            transition: max-height 0.3s linear;
+          }
+          
+    </style>
+</head>
+<body>
+
+   <button class="accordian">Web Design</button>
+   <div class="panel">
+      <p>
+         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.Digital Marketing amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.
+       </p>
+   </div>
+
+   <button class="accordian">Web Development</button>
+   <div class="panel">
+      <p>
+         Web Development Training sit amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.Digital Marketing amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.
+       </p>
+   </div>
+
+   <button class="accordian">Digital Marketing</button>
+   <div class="panel">
+      <p>
+        Digital Marketing amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.Digital Marketing amet consectetur, adipisicing elit. Consequuntur recusandae tempora qui quod dolore dolores alias veniam quisquam cumque minus officia harum, iusto odio magnam quidem unde exercitationem laborum est.
+       </p>
+   </div>
+
+     <script>
+           var acc = document.getElementsByClassName("accordian");
+           var i;
+
+           for(i=0; i < acc.length; i++)
+             {
+                 acc[i].addEventListener("click", function()
+                 {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+
+                    if(panel.style.maxHeight)
+                    {
+                       panel.style.maxHeight = null;
+                       panel.style.padding = '0px';
+                    }
+                    else
+                    {
+                      panel.style.maxHeight = panel.scrollHeight + "px";
+                      panel.style.padding = '15px';
+                    }
+                 })
+             }
+
+     </script>
+    
+</body>
+</html>

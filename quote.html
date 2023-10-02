@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> </title>
+
+  <style type="text/css">
+     
+          * {box-sizing: border-box; margin: 0; padding: 0;}
+          body {font-family: Verdana, sans-serif; margin:0}
+
+          .slideshow-container 
+				{
+				  position: relative;
+				  background: lightgrey;
+				  padding: 50px;                     /*Hide This*/
+				}
+           .head{ text-align: center; margin-top: 25px; }
+
+           .rd{ color: red; }
+
+         .prev, .next 
+				{
+				  cursor: pointer;
+				  position: absolute;
+				  top: 50%;
+				  width: auto;
+				  margin-top: -30px;
+				  padding: 16px;
+				  color: #888;
+				  font-weight: bold;
+				  font-size: 20px;
+				  border-radius: 0 3px 3px 0;
+				  user-select: none;
+				  transition: 0.7s;
+				}
+
+          .next
+          { 
+          	right: 50px;
+          	border-radius: 3px 0 0 3px;
+           }
+
+           .prev:hover, .next:hover{ background: grey; color: white; }
+
+        .myslides{ display: none; transition: 1s; }
+
+
+          .dot-container 
+				{
+				    text-align: center;
+				    padding: 20px;
+				    background: #ddd;
+				}
+
+				/* The dots/bullets/indicators */
+				.dot 
+				{
+				  cursor: pointer;
+				  height: 15px;
+				  width: 15px;
+				  margin: 0 2px;
+				  background-color: #bbb;
+				  border-radius: 50%;
+				  display: inline-block;
+				  transition: background-color 0.6s ease;
+				}
+
+				/* Add a background color to the active dot/circle */
+				.active, .dot:hover 
+				{
+				  background-color: red;
+				}
+
+
+
+  </style>
+
+
+</head>
+<body>
+
+	  <div class="slideshow-container">
+
+	  	  <div class="myslides">
+                <h2 class="head rd"> Mr. Danish Khan </h2>
+                <p class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore.</p>
+                <p class="head rd"> www.genextcomputer.com</p>
+	  	  </div>
+
+	  	  <div class="myslides">
+                <h2 class="head rd"> Mr. Deepak kumar </h2>
+                <p class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore.</p>
+                <p class="head rd"> www.genextcomputer.com</p>
+	  	  </div>
+
+	  	  <div class="myslides">
+                <h2 class="head rd"> Mr. Shivam Kumar </h2>
+                <p class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore.</p>
+                <p class="head rd"> www.genextcomputer.com</p>
+	  	  </div>
+
+	  	  <div class="myslides">
+                <h2 class="head rd"> Ms. Sheetal Rajput </h2>
+                <p class="head">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore.</p>
+                <p class="head rd"> www.genextcomputer.com</p>
+	  	  </div>
+
+	  	  <a class="prev" onclick="plusSlides(-1)"> < </a>
+	  	  <a class="next" onclick="plusSlides(1)"> > </a>
+
+	 </div>
+
+	 <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+	 </div>
+<!-- --------------------------------------------- -->
+
+
+   <script>
+
+var slideIndex = 1;
+
+
+
+showSlides(slideIndex);                // Function Call
+
+    function plusSlides(n) 
+    {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) 
+    {
+      showSlides(slideIndex = n);
+    }
+
+
+// First Calling  
+function showSlides(n) 
+{
+  var i;
+
+  var slides = document.getElementsByClassName("myslides");
+
+  var dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {  slideIndex = 1  }  
+
+  if (n < 1) {slideIndex = slides.length}
+
+
+  for (i = 0; i < slides.length; i++) 
+  {
+      slides[i].style.display = "none";  
+  }
+
+
+  for (i = 0; i < dots.length; i++) 
+  {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex -1].style.display = "block";  
+
+  dots[slideIndex-1].className = " active";
+
+
+}
+</script>
+
+
+</body>
+</html>

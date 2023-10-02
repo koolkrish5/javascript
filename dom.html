@@ -1,0 +1,73 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="home"></h1>
+        <div class="first">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptatibus aspernatur, velit doloribus exercitationem possimus molestiae est facere, laudantium repellat aperiam aliquam porro sint nulla, libero inventore doloremque veritatis totam!
+        </div>
+        <p class="first">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptatibus aspernatur, velit doloribus exercitationem possimus molestiae est facere, laudantium repellat aperiam aliquam porro sint nulla, libero inventore doloremque veritatis totam!
+        </p>
+
+        <script>
+            // document.getElementById("home").innerHTML = "Hello World";
+            let elements = document.getElementsByClassName('first');
+            let data = prompt("enter the name-");
+
+            elements[0].innerHTML = "This is Div";
+            elements[1].innerHTML = "This is para";
+                
+            for(let i=0;i<2;i++){
+                if(data === "genext"){
+                    elements[i].style.backgroundColor = "red";
+                    elements[i].style.color = "white";
+                }
+            }
+        </script>
+</body>
+</html>  -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="same">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto reiciendis aspernatur atque? Voluptates repellat laudantium possimus minus natus delectus maiores sed similique animi! Labore quas architecto commodi. Corporis, aperiam temporibus?</p>
+
+    <div class="same">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit praesentium dignissimos incidunt eaque esse. Molestiae recusandae, sint quas debitis beatae id autem porro quae illum, voluptatibus temporibus natus in quisquam!</div>
+
+    <p class="same">hello this is second p</p>
+    
+    <p class="same">I am third</p>
+
+    <script>
+            let ele = document.getElementsByTagName('p');
+
+            
+            ele[1].style.padding=20; 
+    </script> -->
+
+
+    <h2>this is h2</h2>
+
+    <h1>I am h1</h1>
+
+    <script>
+        const para = document.createElement('p');
+        para.innerHTML =  "I am created";
+        para.style.padding = 30;
+        para.style.backgroundColor="grey";
+
+        document.body.appendChild(para);
+    </script>
+</body>
+</html>

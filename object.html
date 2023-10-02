@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> </title>
+	
+</head>
+<body>
+
+	<!-- ------------------------- Literal Object ----------------- -->
+
+<!-- 	     <h1 id="aa">   </h1>
+	     <h1 id="bb">   </h1>
+
+	    <script type="text/javascript">
+
+             const emp = 
+             {
+                id : 1, 
+                name:"Sujay", 
+                age :23,
+                salary : 12000
+             }
+
+
+           
+           // console.log(emp);
+
+             document.getElementById('aa').innerHTML = emp.id;
+             document.getElementById('bb').innerHTML = emp.name;
+
+
+	    </script> -->
+
+<!-- ---------------------------------Instance Object--------------------------- -->
+
+   
+    <!-- <script type="text/javascript">
+
+      var emp =new Object;
+
+      emp.id=21;
+      emp.name="Lokesh";
+      emp.salary = 12000;
+
+      console.log(emp);
+
+    </script> -->
+
+
+     <!-- -------------------------------Object operation-------- -->
+
+
+     <script type="text/javascript">
+          
+           const emp = 
+           { 
+               id : 1,
+               name : "Genext",
+               age : 19,
+               salary : 200000
+           }
+
+
+           emp.salary = 2500000;
+           emp.nat = "BHARTIYA";
+           delete emp.age;
+           
+           // console.log(emp);
+
+          for(let key in emp)
+          	  {
+          	  	 document.write("<br> " + key + " : " + emp[key]);
+          	  }
+
+     </script>
+
+</body>
+</html>

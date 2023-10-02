@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordian</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .accordian
+        {
+            padding: 15px;
+            width: 100%;
+            background-color: #ccc;
+            color: black;
+            outline: none;
+            border: none;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 500;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .active, .accordian:hover
+        {
+            background-color: #f2f2f2;
+        }
+
+        .active:after
+        {
+            content: "\2212";
+        }
+
+        .accordian:after
+        {
+            content: "\002B";
+            float: right;
+            color: darkgray;
+        }
+
+        .panel
+        {
+            font-size: 15px;
+            max-height: 0px;
+            transition: max-height 0.3s;
+            overflow: hidden;
+            color: darkgray;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="accordian">Web Designing</button>
+
+    <div class="panel">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+             Fuga unde laudantium, qui rem nostrum nemo officia rerum 
+             quibusdam nulla laboriosam saepe explicabo natus dolores suscipit.
+              Possimus cumque facere perspiciatis consectetur?</p>
+    </div>
+
+    <button class="accordian">Web Development</button>
+
+    <div class="panel">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Fuga unde laudantium, qui rem nostrum nemo officia rerum 
+            quibusdam nulla laboriosam saepe explicabo natus dolores suscipit.
+             Possimus cumque facere perspiciatis consectetur?</p>
+    </div>
+
+    <button class="accordian">Digital Marketing</button>
+
+    <div class="panel">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Fuga unde laudantium, qui rem nostrum nemo officia rerum 
+            quibusdam nulla laboriosam saepe explicabo natus dolores suscipit.
+             Possimus cumque facere perspiciatis consectetur?</p>
+    </div>
+
+
+    <script type="text/javascript">
+
+        var acc=document.getElementsByClassName('accordian');
+        var i;
+
+        for(i=0; i<acc.length; i++)
+        {
+            acc[i].addEventListener('click',function()
+            {
+                this.classList.toggle('active');
+
+                var panel= this.nextElementSibling;
+
+                if(panel.style.maxHeight)
+                {
+                    panel.style.maxHeight= null;
+                    panel.style.padding = '0px';
+                }
+                else
+                {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                    panel.style.padding = '15px'
+                }
+            })
+        }
+
+    </script>
+    
+</body>
+</html>
